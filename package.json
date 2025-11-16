@@ -13,8 +13,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\"",
     "lint:fix": "npm run lint -- --fix",
     "format:check": "prettier --check \"**/*.{js,jsx,css,md,json}\"",
-    "format:write": "prettier --write \"**/*.{js,jsx,css,md,json}\"",
-    "prepare": "husky install"
+    "format:write": "prettier --write \"**/*.{js,jsx,css,md,json}\""
   },
   "dependencies": {
     "clsx": "^2.1.0",
@@ -34,20 +33,9 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "husky": "^9.1.7",
     "jsdom": "^27.2.0",
-    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
     "vite": "^5.2.0",
     "vitest": "^4.0.9"
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{css,md,json}": [
-      "prettier --write"
-    ]
   }
 }

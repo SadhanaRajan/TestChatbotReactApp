@@ -44,10 +44,9 @@ npm run preview
 -   `npm run lint` / `npm run lint:fix` – run ESLint once or with `--fix` to keep React code tidy.
 -   `npm run format:check` / `npm run format:write` – verify or apply Prettier formatting across source files.
 
-### Code Quality Hooks
+### Code Quality
 
--   Husky + lint-staged run ESLint/Prettier on staged files before each commit. Run `npm run prepare` once after cloning to activate the git hook if it has not been set up already.
--   Formatting is standardized via `prettier.config.cjs`, so editors can point to that file or execute the `format:write` script for batch cleanups.
+-   ESLint and Prettier configs live at the repo root (`.eslintrc.cjs`, `prettier.config.cjs`). Run the scripts above manually whenever you need to tidy the codebase or integrate them into your editor.
 
 ### Feature Notes
 
