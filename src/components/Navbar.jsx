@@ -1,9 +1,25 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useAppContext } from '../context/AppContext.jsx';
+import { useDebounce } from '../hooks/useDebounce.js';
+
+const SEARCH_DEBOUNCE_MS = 250;
 
 const Navbar = () => {
   const { searchTerm, setSearchTerm } = useAppContext();
+  const [inputValue, setInputValue] = useState(searchTerm);
+  const debouncedSearch = useDebounce(inputValue, SEARCH_DEBOUNCE_MS);
   const searchInputRef = useRef(null);
+
+  useEffect(() => {
+    setInputValue(searchTerm);
+  }, [searchTerm]);
+
+  useEffect(() => {
+    if (debouncedSearch === searchTerm) {
+      return;
+    }
+    setSearchTerm(debouncedSearch);
+  }, [debouncedSearch, searchTerm, setSearchTerm]);
 
   useEffect(() => {
     const handleShortcut = (event) => {
@@ -47,8 +63,8 @@ const Navbar = () => {
           ref={searchInputRef}
           type="search"
           placeholder="Search content..."
-          value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
           aria-label="Search paragraphs"
           aria-keyshortcuts="/"
         />
