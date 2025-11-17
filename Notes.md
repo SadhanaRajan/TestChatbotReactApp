@@ -17,6 +17,7 @@
 1. Added ESLint/Prettier hooks to keep the codebase tidy
    * Installed `prettier husky lint-staged`
    * Installed `eslint-plugin-react eslint-plugin-react-hooks`
+1. Deployed project to a live URL: https://test-chatbot-react-app.vercel.app/
 
 
 

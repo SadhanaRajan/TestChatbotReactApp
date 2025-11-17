@@ -26,6 +26,8 @@ A small React single-page app that meets the requirements from `FRONTEND.md`: st
     ```
 4. Open the printed URL (defaults to `http://localhost:5173`) to interact with the UI.
 
+The app is also hosted for quick sharing: https://test-chatbot-react-app.vercel.app/
+
 For a one-off production preview instead of the dev server:
 
 ```bash
